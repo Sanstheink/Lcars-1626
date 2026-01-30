@@ -6,8 +6,8 @@ const progress = document.getElementById('progress');
 const bootStatus = document.getElementById('bootStatus');
 
 // 🔊 เสียง (ใช้ไฟล์หรือ URL ได้)
-const bootSound = new Audio('assets/audio/boot.mp3');
-const beepSound = new Audio('assets/audio/beep.mp3');
+const bootSound = new Audio('https://www.trekcore.com/audio/computer/sequences/computer_activate.mp3');
+const beepSound = new Audio('https://www.trekcore.com/audio/computer/computerbeep_4.mp3');
 
 const PRIMARY_SYSTEMS = [
   'Reinitializing command core…',
