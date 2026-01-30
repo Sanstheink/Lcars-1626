@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USS Azura | NCC-1626-G</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animations.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="lcars-header">
+  <div>
+    <strong>USS AZURA</strong><br>
+    NCC-1626-G
+  </div>
+  <div id="alertStatus">NORMAL CONDITION</div>
+</header>
+
+<nav class="lcars-nav">
+  <button onclick="navigate('bridge')">BRIDGE</button>
+  <button onclick="navigate('helm')">HELM</button>
+  <button onclick="navigate('engineering')">ENGINEERING</button>
+  <button onclick="navigate('science')">SCIENCE</button>
+</nav>
+
+<main>
+  <section id="bridge" class="view active">
+    <h1>BRIDGE</h1>
+    <div class="panel-grid">
+      <div class="panel">SICKBAY</div>
+      <div class="panel">ENGINEERING</div>
+      <div class="panel">SCIENCE LAB</div>
+      <div class="panel">BRIG</div>
+      <div class="panel">CREW QUARTERS</div>
+      <div class="panel">WEAPONS</div>
+      <div class="panel">COMMUNICATIONS</div>
+      <div class="panel">NAVIGATION</div>
+      <div class="panel">SECURITY</div>
+    </div>
+
+    <div class="alert-controls">
+      <button onclick="alertRed()">RED ALERT</button>
+      <button onclick="alertYellow()">YELLOW ALERT</button>
+      <button onclick="alertBlue()">BLUE ALERT</button>
+      <button onclick="alertBlack()">BLACK ALERT</button>
+      <button onclick="alertProximity()">PROXIMITY ALERT</button>
+    </div>
+  </section>
+
+  <section id="helm" class="view">
+    <h1>HELM</h1>
+    <div class="status">
+      <p>SHIELDS: <span>87%</span></p>
+      <p>HULL: <span>92%</span></p>
+      <p>IMPULSE: <span>ONLINE</span></p>
+      <p>WARP CORE: <span>STABLE</span></p>
+    </div>
+  </section>
+
+  <section id="engineering" class="view">
+    <h1>ENGINEERING</h1>
+    <div class="core"></div>
+    <p>WARP CORE STABILITY: 99.4%</p>
+  </section>
+
+  <section id="science" class="view">
+    <h1>SCIENCE</h1>
+    <div class="scanner"></div>
+    <p>Scanning star system...</p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+<script src="alerts.js"></script>
+</body>
+                    </html>
