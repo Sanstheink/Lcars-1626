@@ -1,77 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>USS Azura | NCC-1626-G</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="animations.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>USS AZURA – LCARS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<header class="lcars-header">
-  <div>
-    <strong>USS AZURA</strong><br>
-    NCC-1626-G
+<!-- ================= BOOT SCREEN ================= -->
+<div id="bootScreen">
+  <div class="boot-center">
+    <h1>USS AZURA</h1>
+    <p class="reg">NCC-1626-G</p>
+
+    <div class="boot-log" id="bootLog"></div>
+
+    <div class="progress-bar">
+      <div id="progress"></div>
+    </div>
+
+    <p class="boot-status" id="bootStatus">INITIALIZING SYSTEMS…</p>
   </div>
-  <div id="alertStatus">NORMAL CONDITION</div>
-</header>
+</div>
 
-<nav class="lcars-nav">
-  <button onclick="navigate('bridge')">BRIDGE</button>
-  <button onclick="navigate('helm')">HELM</button>
-  <button onclick="navigate('engineering')">ENGINEERING</button>
-  <button onclick="navigate('science')">SCIENCE</button>
-</nav>
+<!-- ================= MAIN LCARS ================= -->
+<div id="lcars">
 
-<main>
-  <section id="bridge" class="view active">
-    <h1>BRIDGE</h1>
-    <div class="panel-grid">
-      <div class="panel">SICKBAY</div>
-      <div class="panel">ENGINEERING</div>
-      <div class="panel">SCIENCE LAB</div>
-      <div class="panel">BRIG</div>
-      <div class="panel">CREW QUARTERS</div>
-      <div class="panel">WEAPONS</div>
-      <div class="panel">COMMUNICATIONS</div>
-      <div class="panel">NAVIGATION</div>
-      <div class="panel">SECURITY</div>
-    </div>
+  <header class="lcars-header">
+    <h2>BRIDGE</h2>
+    <span>STARFLEET COMMAND INTERFACE</span>
+  </header>
 
-    <div class="alert-controls">
-      <button onclick="alertRed()">RED ALERT</button>
-      <button onclick="alertYellow()">YELLOW ALERT</button>
-      <button onclick="alertBlue()">BLUE ALERT</button>
-      <button onclick="alertBlack()">BLACK ALERT</button>
-      <button onclick="alertProximity()">PROXIMITY ALERT</button>
-    </div>
-  </section>
+  <main class="lcars-main">
 
-  <section id="helm" class="view">
-    <h1>HELM</h1>
-    <div class="status">
-      <p>SHIELDS: <span>87%</span></p>
-      <p>HULL: <span>92%</span></p>
-      <p>IMPULSE: <span>ONLINE</span></p>
-      <p>WARP CORE: <span>STABLE</span></p>
-    </div>
-  </section>
+    <section class="panel">
+      <h3>SYSTEM CONTROL</h3>
 
-  <section id="engineering" class="view">
-    <h1>ENGINEERING</h1>
-    <div class="core"></div>
-    <p>WARP CORE STABILITY: 99.4%</p>
-  </section>
+      <div class="reboot-controls">
+        <button onclick="rebootPrimary()">REBOOT PRIMARY SYSTEMS</button>
+        <button onclick="rebootSecondary()">REBOOT SECONDARY SYSTEMS</button>
+      </div>
 
-  <section id="science" class="view">
-    <h1>SCIENCE</h1>
-    <div class="scanner"></div>
-    <p>Scanning star system...</p>
-  </section>
-</main>
+    </section>
 
+  </main>
+
+</div>
+
+<script src="alert.js"></script>
 <script src="app.js"></script>
-<script src="alerts.js"></script>
 </body>
-                    </html>
+</html>
